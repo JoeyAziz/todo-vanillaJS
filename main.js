@@ -48,10 +48,16 @@ function markTodoItem(event){
     {
         checkMark.classList.remove("todo-checkbox-tick");
         target.classList.remove("todo-marked"); 
+        target.classList.remove("strike"); 
+        target.classList.add("strike-undo");
+
     }   
     else {
         checkMark.classList.add("todo-checkbox-tick");
         target.classList.add("todo-marked");
+        target.classList.add("strike");
+        target.classList.remove("strike-undo");
+
     }
 }
 
