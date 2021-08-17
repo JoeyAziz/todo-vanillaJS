@@ -185,4 +185,38 @@ form button:hover {
 .fa-trash-alt {
   pointer-events: none;
 }
+
+.todo-marked {
+  color: gray;
+  font-style: italic;
+  text-decoration: line-through;
+}
+
+input[type="checkbox"] {
+  width: 1.2rem;
+  height: 1.2rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: relative;
+}
+
+input[type="checkbox"]::before {
+  content: " ";
+  width: 0.6rem;
+  height: 0.6rem;
+  background-color: white;
+  border: 0.1px solid gray;
+  position: absolute;
+  top: 20%;
+  left: 15%;
+}
+
+.todo-checkbox-tick::after {
+  content: "\2713";
+  font-size: 1.6rem;
+  position: absolute;
+  top: -50%;
+  left: -15%;
+}
 /*# sourceMappingURL=style.css.map */

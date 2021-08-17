@@ -17,6 +17,7 @@ function addTodoItem(event){
     //create checker
     const todoChecker = document.createElement("input");
     todoChecker.type = "checkbox";
+    todoChecker.addEventListener('click', markTodoItem);
     todoDIV.appendChild(todoChecker);
 
     //create item
@@ -40,7 +41,21 @@ function addTodoItem(event){
     todoList.appendChild(todoDIV);
 }
 
+function markTodoItem(event){
+    const checkMark = event.target;
+    const target = event.target.nextElementSibling;
+    if(target.classList.contains("todo-marked"))
+    {
+        checkMark.classList.remove("todo-checkbox-tick");
+        target.classList.remove("todo-marked"); 
+    }   
+    else {
+        checkMark.classList.add("todo-checkbox-tick");
+        target.classList.add("todo-marked");
+    }
+}
+
 function deleteTodoItem(event){
-    console.log(event.target.parentElement)
     event.target.parentElement.remove();
 }
+
